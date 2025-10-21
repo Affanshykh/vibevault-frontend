@@ -12,7 +12,7 @@ const Landing = () => {
   const showSuccess = useMemo(() => location.search.includes('connected=true'), [location.search])
 
   const handleConnect = () => {
-    window.location.href = '/auth/login'
+    window.location.href = 'https://vibevault-backend.vercel.app/auth/login'
   }
 
   return (
