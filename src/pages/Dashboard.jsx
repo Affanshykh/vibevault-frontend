@@ -29,10 +29,10 @@ const Dashboard = () => {
       try {
         setIsLoading(true)
         const [tracksRes, artistsRes, genresRes, minutesRes] = await Promise.all([
-          apiClient.get('/api/top/tracks'),
-          apiClient.get('/api/top/artists'),
-          apiClient.get('/api/top/genres'),
-          apiClient.get('/api/minutes')
+          apiClient.get('https://vibevault-backend.vercel.app/api/top/tracks'),
+          apiClient.get('https://vibevault-backend.vercel.app/api/top/artists'),
+          apiClient.get('https://vibevault-backend.vercel.app/api/top/genres'),
+          apiClient.get('https://vibevault-backend.vercel.app/api/minutes')
         ])
 
         setData({

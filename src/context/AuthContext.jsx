@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchSession = async () => {
       try {
-        const { data } = await apiClient.get('/api/session')
+        const { data } = await apiClient.get('https://vibevault-backend.vercel.app/api/session')
         setUser(data.user)
       } catch (error) {
         setUser(null)
