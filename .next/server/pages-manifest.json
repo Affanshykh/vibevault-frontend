@@ -1,8 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/api/[...proxyPath]": "pages/api/[...proxyPath].js",
-  "/api/auth/[...authPath]": "pages/api/auth/[...authPath].js"
-}
+{"/_app":"pages/_app.js","/dashboard":"pages/dashboard.html","/":"pages/index.html","/_error":"pages/_error.js","/api/[...proxyPath]":"pages/api/[...proxyPath].js","/api/auth/[...authPath]":"pages/api/auth/[...authPath].js","/_document":"pages/_document.js","/404":"pages/404.html"}

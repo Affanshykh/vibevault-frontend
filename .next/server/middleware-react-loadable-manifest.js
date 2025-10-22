@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"pages/dashboard.jsx -> html-to-image":{"id":6293,"files":["static/chunks/293.abf60d05ea651ef7.js"]}}';
