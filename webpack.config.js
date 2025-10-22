@@ -1,13 +1,28 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
+import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import dotenv from 'dotenv'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+dotenv.config()
+
 const isProduction = process.env.NODE_ENV === 'production'
+
+const envPrefix = 'VITE_'
+
+const environmentVariables = Object.entries(process.env)
+  .filter(([key]) => key.startsWith(envPrefix))
+  .reduce((acc, [key, value]) => {
+    acc[key] = value
+    return acc
+  }, {})
+
+environmentVariables.NODE_ENV = process.env.NODE_ENV ?? (isProduction ? 'production' : 'development')
 
 export default {
   entry: path.resolve(__dirname, 'src/main.jsx'),
@@ -61,6 +76,9 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index.html')
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(environmentVariables)
     }),
     new CopyWebpackPlugin({
       patterns: [

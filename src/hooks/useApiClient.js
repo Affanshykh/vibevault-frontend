@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://vibevault-backend.vercel.app',
+  baseURL: process.env.VITE_API_BASE_URL || 'https://vibevault-backend.vercel.app',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
