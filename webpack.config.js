@@ -75,7 +75,12 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html')
+      template: path.resolve(__dirname, 'index.html'),
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index.html'),
+      filename: '404.html'
     }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(environmentVariables)

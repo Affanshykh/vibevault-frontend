@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --config webpack.config.js --mode development",
     "build": "webpack --config webpack.config.js --mode production",
-    "preview": "npm run build && serve dist",
+    "preview": "npm run build && serve -s dist",
     "lint": "eslint src --ext .js,.jsx"
   },
   "dependencies": {
